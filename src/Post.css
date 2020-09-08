@@ -32,7 +32,7 @@
   padding: 15px 25px;
 }
 
-.post_image {
+.post_image > img {
   width: 100%;
 }
 
