@@ -12,6 +12,10 @@ function MessageSender() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // db stuff
+    setInput("");
+    setImageUrl("");
   };
 
   return (
@@ -26,6 +30,7 @@ function MessageSender() {
             onChange={(e) => setInput(e.target.value)}
           />
           <input
+            className="messageSender_input"
             placeholder={`Image URL (Optional)`}
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
