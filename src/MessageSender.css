@@ -43,8 +43,19 @@
 
 .messageSender_option {
   display: flex;
-  padding: 20;
+  padding: 20px;
   align-items: center;
   color: gray;
   margin: 5px;
+  cursor: pointer;
+}
+
+.messageSender_option:hover {
+  background-color: lightgray;
+  border-radius: 20px;
+}
+
+.messageSender_option > h3 {
+  font-size: medium;
+  margin-left: 10px;
 }
