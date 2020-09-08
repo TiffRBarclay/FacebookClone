@@ -1,4 +1,5 @@
 import React from "react";
+import { useStateValue } from "./StateProvider";
 import "./Sidebar.css";
 
 import SidebarRow from "./SidebarRow";
@@ -12,9 +13,10 @@ import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import ExpandMoreOutlined from "@material-ui/icons/ExpandMoreOutlined";
 
 function SideBar() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="sidebar">
-      <SidebarRow src={FaceBookLogo} title="Tiffany Barclay" />
+      <SidebarRow src={user.photoURL} title={user.displayName} />
       <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
       <SidebarRow Icon={PeopleIcon} title="Friends" />
       <SidebarRow Icon={ChatIcon} title="Messenger" />

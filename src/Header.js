@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { useStateValue } from "./StateProvider";
 
 import FacebookLogo from "./Images/hiclipart.com.png";
 
@@ -17,6 +18,7 @@ import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 function Header() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="header">
       <div className="header_left">
@@ -45,8 +47,8 @@ function Header() {
       </div>
       <div className="header_right">
         <div className="header_info">
-          <Avatar />
-          <h4>Tiffany Barclay</h4>
+          <Avatar src={user.photoURL} />
+          <h4>{user.displayName}</h4>
         </div>
 
         <IconButton>
