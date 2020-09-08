@@ -11,6 +11,7 @@ function StoryReel() {
       <Story image={StoryDummy} title="Tiffany Barclay" />
       <Story image={StoryDummy} title="Tiffany Barclay" />
       <Story image={StoryDummy} title="Tiffany Barclay" />
+      <Story image={StoryDummy} title="Tiffany Barclay" />
     </div>
   );
 }
