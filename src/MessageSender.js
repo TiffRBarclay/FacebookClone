@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useStateValue } from "./StateProvider";
+import db from "./firebase";
+import firebase from "firebase";
 import "./MessageSender.css";
 
 import { Avatar } from "@material-ui/core";
@@ -15,7 +17,14 @@ function MessageSender() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // db stuff
+    db.collection("posts").add({
+      message: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      profilePic: user.photoURL,
+      username: user.displayName,
+      image: imageUrl,
+    });
+
     setInput("");
     setImageUrl("");
   };
